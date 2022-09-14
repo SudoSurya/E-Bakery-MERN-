@@ -1,6 +1,17 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import AdminHeader from "./AdminHeader";
+import RegisterModal from "./RegisterModal";
+
 export default function AdminHomepage() {
+  const [setRegModal, OpenRegModal] = useState(false);
+
+  function closeModal1() {
+    OpenRegModal(false);
+  }
   return (
     <div>
+      <AdminHeader />
       <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
         <div className="sm:text-center lg:text-left">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
@@ -16,17 +27,18 @@ export default function AdminHomepage() {
           </p>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div className="rounded-md shadow">
-              <a
-                href="#"
+              <Link
+                to="/adminlogin"
                 className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
               >
                 Login
-              </a>
+              </Link>
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-3">
               <a
                 href="#"
                 className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-100 px-8 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200 md:py-4 md:px-10 md:text-lg"
+                onClick={() => OpenRegModal(true)}
               >
                 Register
               </a>
@@ -34,6 +46,7 @@ export default function AdminHomepage() {
           </div>
         </div>
       </main>
+      {setRegModal && <RegisterModal closeModal1={closeModal1} />}
     </div>
   );
 }
