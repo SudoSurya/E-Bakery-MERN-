@@ -7,13 +7,13 @@ export default function AdminDashboard() {
         <AdminHeader>
           <div className="flex">
             <Link
-              to="/adminlogin"
+              to="/admin/login"
               className="text-gray-50 text-2xl font-roboto cursor-pointer px-5 hover:bg-zinc-600 hover:rounded-lg py-1"
             >
               View Products
             </Link>
             <Link
-              to="/adminlogin"
+              to="/admin/login"
               className="text-gray-50 text-2xl font-roboto cursor-pointer px-5 hover:bg-zinc-600 hover:rounded-lg py-1"
             >
               Logout
@@ -32,7 +32,10 @@ export default function AdminDashboard() {
       </>
 
       <div className="flex justify-center space-x-4">
-        <div className="w-96 shadow-lg hover:shadow-2xl p-2 hover:bg-gray-300 cursor-pointer">
+        <Link
+          to="/admin/products"
+          className="w-96 shadow-lg hover:shadow-2xl p-2 hover:bg-gray-300 cursor-pointer"
+        >
           <img
             src="http://source.unsplash.com/1800x900?bakery"
             className="w-full object-fill p-2"
@@ -40,7 +43,7 @@ export default function AdminDashboard() {
           <h1 className="text-slate-600 font-bold text-center text-xl my-2">
             View Products
           </h1>
-        </div>
+        </Link>
         <div className="w-96 shadow-lg hover:shadow-2xl p-2 hover:bg-gray-300 cursor-pointer">
           <img
             src="http://source.unsplash.com/1800x900?items"

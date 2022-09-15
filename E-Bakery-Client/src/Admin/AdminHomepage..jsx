@@ -13,7 +13,7 @@ export default function AdminHomepage() {
     <div>
       <AdminHeader>
         <Link
-          to="/adminlogin"
+          to="/admin/login"
           className="text-gray-50 text-2xl font-roboto cursor-pointer px-5 hover:bg-zinc-600 hover:rounded-lg py-1"
         >
           Login
@@ -35,7 +35,7 @@ export default function AdminHomepage() {
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div className="rounded-md shadow">
               <Link
-                to="/adminlogin"
+                to="/admin/login"
                 className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
               >
                 Login
