@@ -44,7 +44,10 @@ export default function AdminDashboard() {
             View Products
           </h1>
         </Link>
-        <div className="w-96 shadow-lg hover:shadow-2xl p-2 hover:bg-gray-300 cursor-pointer">
+        <Link
+          to="/admin/newproduct"
+          className="w-96 shadow-lg hover:shadow-2xl p-2 hover:bg-gray-300 cursor-pointer"
+        >
           <img
             src="http://source.unsplash.com/1800x900?items"
             className="w-full object-fill p-2"
@@ -52,7 +55,7 @@ export default function AdminDashboard() {
           <h1 className="text-slate-600 font-bold text-center text-xl my-2">
             Add New Products
           </h1>
-        </div>
+        </Link>
         <div className="w-96 shadow-lg hover:shadow-2xl p-2 hover:bg-gray-300 cursor-pointer">
           <img
             src="http://source.unsplash.com/1800x900?manage"

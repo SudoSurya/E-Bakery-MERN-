@@ -10,8 +10,7 @@ export default function AdminHeader({ children }) {
         >
           Admin Portal
         </Link>
-        <>{children}</>
-
+        <div>{children}</div>
       </div>
     </>
   );
