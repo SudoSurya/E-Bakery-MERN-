@@ -1,8 +1,12 @@
 import { LockClosedIcon } from "@heroicons/react/20/solid";
+import DialogBox from "./DialogBox";
 import AdminHeader from "./AdminHeader";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useState } from "react";
 export default function NewProduct() {
+  const [modal, setModal] = useState(false);
   const {
     register,
     handleSubmit,
@@ -11,7 +15,9 @@ export default function NewProduct() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    axios
+      .post("http://localhost:8080/newproduct", data)
+      .then((res) => setModal(true));
   };
 
   return (
@@ -142,6 +148,7 @@ export default function NewProduct() {
           </form>
         </div>
       </div>
+      <>{modal && <DialogBox setModal={setModal} />}</>
     </div>
   );
 }
